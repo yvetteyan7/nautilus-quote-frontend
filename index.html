@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: http:; connect-src 'self' https: http:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Nautilus · 精排报价工作台</title>
+  <link rel="stylesheet" href="./style.css?v=1.0.0">
+  <script src="./tags-ui.js?v=1.0.0" defer></script>
+  <script src="./config.js?v=1.0.0" defer></script>
+  <script src="./result-adapter.js?v=1.0.0" defer></script>
+  <script src="./returned-pricing.js?v=1.0.0" defer></script>
+  <script src="./rerank-ui.js?v=1.0.0" defer></script>
+  <script src="./quote-descriptions.js?v=1.0.0" defer></script>
+  <script src="./quote-users.js?v=1.0.0" defer></script>
+  <script src="./platform-filter.js?v=1.0.0" defer></script>
+  <script src="./quote-images.js?v=1.0.0" defer></script>
+  <script src="./app.js?v=1.0.0" defer></script>
+</head>
+<body>
+  <header class="integration-toolbar">
+    <strong>Nautilus <span>精排报价</span></strong>
+    <span id="result-status" role="status" aria-live="polite">正在加载…</span>
+    <div class="integration-actions"><button id="load-demo" type="button">查看示例</button>
+      <label class="import-button" for="import-result">导入结果 JSON<input id="import-result" type="file" accept=".json,application/json"></label>
+      <button id="export-selection" type="button" disabled>导出当前报价</button></div>
+  </header>
+  <div class="workspace"><aside class="queue"><div class="queue-heading"><h2>用户心愿</h2><span id="task-count" class="muted">—</span></div><p class="queue-context-note">历史支付区间 · 时间为北京时间</p><nav id="task-list" aria-label="用户心愿列表"></nav></aside><main id="detail"><div class="loading">正在加载心愿列表…</div></main></div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="image-viewer" aria-label="货源图片预览"><div class="viewer-toolbar"><span id="viewer-caption"></span><button id="viewer-close" aria-label="关闭图片">关闭 ×</button></div><div class="viewer-image"><img id="viewer-img" alt="货源原始图片"><p id="viewer-error" hidden>图片暂时无法加载，可打开原图查看。</p></div><div class="viewer-bottom"><button id="viewer-prev">← 上一张</button><a id="viewer-original" target="_blank" rel="noopener noreferrer">打开原图 ↗</a><button id="viewer-next">下一张 →</button></div></dialog>
+  <dialog id="info-viewer" aria-labelledby="info-title"><div class="viewer-toolbar"><h3 id="info-title"></h3><button id="info-close">关闭 ×</button></div><div id="info-content"></div></dialog>
+  <dialog id="seller-comment-viewer" aria-labelledby="seller-comment-title">
+    <header class="seller-comment-header">
+      <h3 id="seller-comment-title" tabindex="-1">卖家评论（原文）</h3>
+      <button type="button" id="seller-comment-close" aria-label="关闭卖家评论">×</button>
+    </header>
+    <div id="seller-comment-body" role="region" aria-label="卖家评论全文" tabindex="0"></div>
+    <footer class="seller-comment-footer"><button type="button" id="seller-comment-mode" aria-pressed="false" hidden>查看原始文本</button><button type="button" class="primary" id="seller-comment-return">返回货源</button></footer>
+  </dialog>
+  <dialog id="quote-image-picker" aria-labelledby="quote-image-picker-title">
+    <header class="quote-image-picker-header"><h3 id="quote-image-picker-title" tabindex="-1">选择报价图片</h3><button type="button" id="quote-image-picker-close" aria-label="关闭选图">×</button></header>
+    <div class="quote-image-picker-toolbar"><span>勾选图片，点击图片可放大</span><div><button type="button" data-image-choice="default">默认前4张</button><button type="button" data-image-choice="all">全选</button><button type="button" data-image-choice="none">清空</button></div></div>
+    <div id="quote-image-picker-grid"></div>
+    <footer class="quote-image-picker-footer"><span id="quote-image-picker-count" role="status"></span><button type="button" id="quote-image-picker-cancel">取消</button><button type="button" class="primary" id="quote-image-picker-apply">使用所选图片</button></footer>
+  </dialog>
+</body>
+</html>

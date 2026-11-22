@@ -1,0 +1,3390 @@
+{
+  "schema_version": "nautilus-quote-result/1",
+  "status": "completed",
+  "demo": true,
+  "request_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "generated_at": "2026-11-22T06:00:00Z",
+  "releases": [
+    {
+      "id": "91000001",
+      "basic": {
+        "release_id": 91000001,
+        "title": "Harbor Letters",
+        "year": 2001,
+        "country": "UK",
+        "medium": "CD",
+        "artists": [
+          {
+            "name": "The Example Quartet"
+          }
+        ],
+        "formats": [
+          {
+            "name": "CD",
+            "text": "Jewel Case"
+          }
+        ]
+      },
+      "artist": "The Example Quartet",
+      "identifiers": {
+        "catno": "DEMO-001",
+        "barcode": null,
+        "labels": [
+          {
+            "name": "Demo Records",
+            "catno": "DEMO-001"
+          }
+        ]
+      },
+      "cover": {
+        "id": "demo-a-1",
+        "url": "https://example.com/nautilus-demo/a-1.svg",
+        "local": "/media/demo-a-1",
+        "kind": "release_reference"
+      },
+      "reference_images": [
+        {
+          "id": "demo-a-1",
+          "url": "https://example.com/nautilus-demo/a-1.svg",
+          "local": "/media/demo-a-1",
+          "kind": "release_reference"
+        },
+        {
+          "id": "demo-a-2",
+          "url": "https://example.com/nautilus-demo/a-2.svg",
+          "local": "/media/demo-a-2",
+          "kind": "release_reference"
+        },
+        {
+          "id": "demo-a-3",
+          "url": "https://example.com/nautilus-demo/a-3.svg",
+          "local": "/media/demo-a-3",
+          "kind": "release_reference"
+        }
+      ],
+      "user_avatar": null,
+      "wish_context": {
+        "wish_id": "DEMO-WISH-a",
+        "target_release_id": "91000001",
+        "nickname": "示例用户 A",
+        "work_title": "Harbor Letters",
+        "requested_at": "2026-11-22T05:00:00Z",
+        "first_login_at": "2026-01-01T00:00:00Z",
+        "last_login_at": "2026-11-22T00:00:00Z",
+        "payment_history": {
+          "lowest_cny": 32,
+          "highest_cny": 197
+        },
+        "statistics": {
+          "totalwant": 24,
+          "supplytotal": 20,
+          "paytotal": 8,
+          "payrate": 0.4,
+          "priceratio": 0.3
+        }
+      },
+      "requirements": {
+        "version_requirement": "接受其他版本",
+        "obi_requirement_raw": null,
+        "remark": ""
+      },
+      "sources": [
+        {
+          "id": "91000001:EBAYUKUS:DEMO-1",
+          "order": 1,
+          "platform": "eBay",
+          "platform_code": "EBAYUKUS",
+          "product_id": "DEMO-a-1",
+          "title": "The Example Quartet — Harbor Letters CD 2001",
+          "url": "https://example.com/nautilus-demo/product-a-1",
+          "images": [
+            {
+              "id": "demo-a-1",
+              "url": "https://example.com/nautilus-demo/a-1.svg",
+              "local": "/media/demo-a-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-2",
+              "url": "https://example.com/nautilus-demo/a-2.svg",
+              "local": "/media/demo-a-2",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-3",
+              "url": "https://example.com/nautilus-demo/a-3.svg",
+              "local": "/media/demo-a-3",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-4",
+              "url": "https://example.com/nautilus-demo/a-4.svg",
+              "local": "/media/demo-a-4",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-5",
+              "url": "https://example.com/nautilus-demo/a-5.svg",
+              "local": "/media/demo-a-5",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-6",
+              "url": "https://example.com/nautilus-demo/a-6.svg",
+              "local": "/media/demo-a-6",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 1",
+            "ship_from": "UK",
+            "rating_count_raw": 101
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "<p>Demo listing. CD in excellent condition.</p><p>Original jewel case; light wear on the cover. Photos show this demonstration only.</p>"
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 1,
+            "candidate_rank": 1,
+            "candidate_id": "EBAYUKUS:DEMO-1",
+            "eligibility": "eligible",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 112.5,
+                "components_cny": {
+                  "sale": 87.5,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 112.5,
+                  "components_cny": {
+                    "sale": 87.5,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Harbor Letters",
+                "target": "Harbor Letters",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 112.5
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 6,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": true
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Harbor Letters",
+                "quote": "Harbor Letters",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "到仓成本 ¥112.50，服务器建议报价 ¥135.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 112.5,
+              "quoteCny": 135,
+              "profitCny": 22.5,
+              "floorCny": 122.5,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "The Example Quartet《Harbor Letters》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000001:DSUS:DEMO-2",
+          "order": 2,
+          "platform": "Discogs",
+          "platform_code": "DSUS",
+          "product_id": "DEMO-a-2",
+          "title": "The Example Quartet — Harbor Letters CD 2001",
+          "url": "https://example.com/nautilus-demo/product-a-2",
+          "images": [],
+          "seller": {
+            "nickname": "Demo Seller 2",
+            "ship_from": "UK",
+            "rating_count_raw": 102
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 2,
+            "candidate_rank": 2,
+            "candidate_id": "DSUS:DEMO-2",
+            "eligibility": "manual_review",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 125,
+                "components_cny": {
+                  "sale": 100,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 125,
+                  "components_cny": {
+                    "sale": 100,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Harbor Letters",
+                "target": "Harbor Letters",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.missing",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 125
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 3",
+                "observed": {
+                  "tier": 3,
+                  "image_type": "none"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.missing",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "未提供货源图片",
+                "observed": 0,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": false
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Harbor Letters",
+                "quote": "Harbor Letters",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "到仓成本 ¥125.00，服务器建议报价 ¥150.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 125,
+              "quoteCny": 150,
+              "profitCny": 25,
+              "floorCny": 135,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "The Example Quartet《Harbor Letters》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000001:MERC:DEMO-3",
+          "order": 3,
+          "platform": "Mercari",
+          "platform_code": "MERC",
+          "product_id": "DEMO-a-3",
+          "title": "The Example Quartet — Harbor Letters CD 2001",
+          "url": "https://example.com/nautilus-demo/product-a-3",
+          "images": [
+            {
+              "id": "demo-a-1",
+              "url": "https://example.com/nautilus-demo/a-1.svg",
+              "local": "/media/demo-a-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-2",
+              "url": "https://example.com/nautilus-demo/a-2.svg",
+              "local": "/media/demo-a-2",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 3",
+            "ship_from": "UK",
+            "rating_count_raw": 103
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 3,
+            "candidate_rank": 3,
+            "candidate_id": "MERC:DEMO-3",
+            "eligibility": "manual_review",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 137.5,
+                "components_cny": {
+                  "sale": 112.5,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 137.5,
+                  "components_cny": {
+                    "sale": 112.5,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Harbor Letters",
+                "target": "Harbor Letters",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 137.5
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 2,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": null
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Harbor Letters",
+                "quote": "Harbor Letters",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "到仓成本 ¥137.50，服务器建议报价 ¥165.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 137.5,
+              "quoteCny": 165,
+              "profitCny": 27.5,
+              "floorCny": 147.5,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "The Example Quartet《Harbor Letters》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000001:YAHOOJAPAN:DEMO-4",
+          "order": 4,
+          "platform": "Yahoo",
+          "platform_code": "YAHOOJAPAN",
+          "product_id": "DEMO-a-4",
+          "title": "The Example Quartet — Harbor Letters CD 2001",
+          "url": "https://example.com/nautilus-demo/product-a-4",
+          "images": [
+            {
+              "id": "demo-a-1",
+              "url": "https://example.com/nautilus-demo/a-1.svg",
+              "local": "/media/demo-a-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-2",
+              "url": "https://example.com/nautilus-demo/a-2.svg",
+              "local": "/media/demo-a-2",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 4",
+            "ship_from": "UK",
+            "rating_count_raw": 104
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 4,
+            "candidate_rank": 4,
+            "candidate_id": "YAHOOJAPAN:DEMO-4",
+            "eligibility": "manual_review",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 150,
+                "components_cny": {
+                  "sale": 125,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 150,
+                  "components_cny": {
+                    "sale": 125,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Harbor Letters",
+                "target": "Harbor Letters",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 150
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 2,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": null
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Harbor Letters",
+                "quote": "Harbor Letters",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "到仓成本 ¥150.00，服务器建议报价 ¥180.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 150,
+              "quoteCny": 180,
+              "profitCny": 30,
+              "floorCny": 160,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "The Example Quartet《Harbor Letters》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000001:AMJP:DEMO-5",
+          "order": 5,
+          "platform": "Amazon JP",
+          "platform_code": "AMJP",
+          "product_id": "DEMO-a-5",
+          "title": "The Example Quartet — Harbor Letters CD 2001",
+          "url": "https://example.com/nautilus-demo/product-a-5",
+          "images": [
+            {
+              "id": "demo-a-1",
+              "url": "https://example.com/nautilus-demo/a-1.svg",
+              "local": "/media/demo-a-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-2",
+              "url": "https://example.com/nautilus-demo/a-2.svg",
+              "local": "/media/demo-a-2",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 5",
+            "ship_from": "UK",
+            "rating_count_raw": 105
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 5,
+            "candidate_rank": 5,
+            "candidate_id": "AMJP:DEMO-5",
+            "eligibility": "manual_review",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 162.5,
+                "components_cny": {
+                  "sale": 137.5,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 162.5,
+                  "components_cny": {
+                    "sale": 137.5,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Harbor Letters",
+                "target": "Harbor Letters",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 162.5
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 2,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": null
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Harbor Letters",
+                "quote": "Harbor Letters",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "到仓成本 ¥162.50，服务器建议报价 ¥195.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 162.5,
+              "quoteCny": 195,
+              "profitCny": 32.5,
+              "floorCny": 172.5,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "The Example Quartet《Harbor Letters》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000001:DISKUNION:DEMO-6",
+          "order": 6,
+          "platform": "Diskunion",
+          "platform_code": "DISKUNION",
+          "product_id": "DEMO-a-6",
+          "title": "The Example Quartet — Harbor Letters CD 2001",
+          "url": "https://example.com/nautilus-demo/product-a-6",
+          "images": [
+            {
+              "id": "demo-a-1",
+              "url": "https://example.com/nautilus-demo/a-1.svg",
+              "local": "/media/demo-a-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-2",
+              "url": "https://example.com/nautilus-demo/a-2.svg",
+              "local": "/media/demo-a-2",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 6",
+            "ship_from": "UK",
+            "rating_count_raw": 106
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 6,
+            "candidate_rank": 6,
+            "candidate_id": "DISKUNION:DEMO-6",
+            "eligibility": "manual_review",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 175,
+                "components_cny": {
+                  "sale": 150,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 175,
+                  "components_cny": {
+                    "sale": 150,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Harbor Letters",
+                "target": "Harbor Letters",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 175
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 2,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": null
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Harbor Letters",
+                "quote": "Harbor Letters",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "到仓成本 ¥175.00，服务器建议报价 ¥210.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 175,
+              "quoteCny": 210,
+              "profitCny": 35,
+              "floorCny": 185,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "The Example Quartet《Harbor Letters》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000001:EBAYUKUS:DEMO-7",
+          "order": 7,
+          "platform": "eBay",
+          "platform_code": "EBAYUKUS",
+          "product_id": "DEMO-a-7",
+          "title": "The Example Quartet Another Album CD",
+          "url": "https://example.com/nautilus-demo/product-a-7",
+          "images": [
+            {
+              "id": "demo-a-1",
+              "url": "https://example.com/nautilus-demo/a-1.svg",
+              "local": "/media/demo-a-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-a-2",
+              "url": "https://example.com/nautilus-demo/a-2.svg",
+              "local": "/media/demo-a-2",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 7",
+            "ship_from": "UK",
+            "rating_count_raw": 107
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 7,
+            "candidate_rank": null,
+            "candidate_id": "EBAYUKUS:DEMO-7",
+            "eligibility": "excluded",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 187.5,
+                "components_cny": {
+                  "sale": 162.5,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 187.5,
+                  "components_cny": {
+                    "sale": 162.5,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.conflict",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 不一致",
+                "observed": "Another Album",
+                "target": "Harbor Letters",
+                "state": "conflict",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "The Example Quartet",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 187.5
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 2,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": null
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Another Album",
+                "quote": "Another Album",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "The Example Quartet",
+                "quote": "The Example Quartet",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "excluded_by_title",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-a",
+            "summary": "本条暂无可用报价。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "unavailable",
+              "costCny": 187.5,
+              "quoteCny": null,
+              "profitCny": null,
+              "floorCny": 197.5,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "skipped",
+            "description": "",
+            "reviewed": false
+          }
+        }
+      ],
+      "rerank": {
+        "version": "demo",
+        "summary": {
+          "total": 7,
+          "eligible": 1,
+          "manual_review": 5,
+          "excluded": 1
+        }
+      },
+      "sales_history": {
+        "lowest_cny": 80,
+        "median_cny": 140,
+        "highest_cny": 230,
+        "is_example": true
+      }
+    },
+    {
+      "id": "91000002",
+      "basic": {
+        "release_id": 91000002,
+        "title": "Evening Tides",
+        "year": 2001,
+        "country": "UK",
+        "medium": "CD",
+        "artists": [
+          {
+            "name": "Demo Ensemble"
+          }
+        ],
+        "formats": [
+          {
+            "name": "CD",
+            "text": "Jewel Case"
+          }
+        ]
+      },
+      "artist": "Demo Ensemble",
+      "identifiers": {
+        "catno": "DEMO-001",
+        "barcode": null,
+        "labels": [
+          {
+            "name": "Demo Records",
+            "catno": "DEMO-001"
+          }
+        ]
+      },
+      "cover": {
+        "id": "demo-b-1",
+        "url": "https://example.com/nautilus-demo/b-1.svg",
+        "local": "/media/demo-b-1",
+        "kind": "release_reference"
+      },
+      "reference_images": [
+        {
+          "id": "demo-b-1",
+          "url": "https://example.com/nautilus-demo/b-1.svg",
+          "local": "/media/demo-b-1",
+          "kind": "release_reference"
+        },
+        {
+          "id": "demo-b-2",
+          "url": "https://example.com/nautilus-demo/b-2.svg",
+          "local": "/media/demo-b-2",
+          "kind": "release_reference"
+        },
+        {
+          "id": "demo-b-3",
+          "url": "https://example.com/nautilus-demo/b-3.svg",
+          "local": "/media/demo-b-3",
+          "kind": "release_reference"
+        }
+      ],
+      "user_avatar": null,
+      "wish_context": {
+        "wish_id": "DEMO-WISH-b",
+        "target_release_id": "91000002",
+        "nickname": "示例用户 B",
+        "work_title": "Evening Tides",
+        "requested_at": "2026-11-22T05:00:00Z",
+        "first_login_at": "2026-01-01T00:00:00Z",
+        "last_login_at": "2026-11-22T00:00:00Z",
+        "payment_history": {
+          "lowest_cny": 32,
+          "highest_cny": 197
+        },
+        "statistics": {
+          "totalwant": 24,
+          "supplytotal": 20,
+          "paytotal": 8,
+          "payrate": 0.4,
+          "priceratio": 0.3
+        }
+      },
+      "requirements": {
+        "version_requirement": "接受其他版本",
+        "obi_requirement_raw": null,
+        "remark": "示例备注：希望封套完整。"
+      },
+      "sources": [
+        {
+          "id": "91000002:EBAYUKUS:DEMO-1",
+          "order": 1,
+          "platform": "eBay",
+          "platform_code": "EBAYUKUS",
+          "product_id": "DEMO-b-1",
+          "title": "Demo Ensemble — Evening Tides CD 2001",
+          "url": "https://example.com/nautilus-demo/product-b-1",
+          "images": [
+            {
+              "id": "demo-b-1",
+              "url": "https://example.com/nautilus-demo/b-1.svg",
+              "local": "/media/demo-b-1",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-b-2",
+              "url": "https://example.com/nautilus-demo/b-2.svg",
+              "local": "/media/demo-b-2",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-b-3",
+              "url": "https://example.com/nautilus-demo/b-3.svg",
+              "local": "/media/demo-b-3",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-b-4",
+              "url": "https://example.com/nautilus-demo/b-4.svg",
+              "local": "/media/demo-b-4",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-b-5",
+              "url": "https://example.com/nautilus-demo/b-5.svg",
+              "local": "/media/demo-b-5",
+              "kind": "listing_image"
+            },
+            {
+              "id": "demo-b-6",
+              "url": "https://example.com/nautilus-demo/b-6.svg",
+              "local": "/media/demo-b-6",
+              "kind": "listing_image"
+            }
+          ],
+          "seller": {
+            "nickname": "Demo Seller 1",
+            "ship_from": "UK",
+            "rating_count_raw": 101
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "<p>Demo listing. CD in excellent condition.</p><p>Original jewel case; light wear on the cover. Photos show this demonstration only.</p>"
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 1,
+            "candidate_rank": 1,
+            "candidate_id": "EBAYUKUS:DEMO-1",
+            "eligibility": "eligible",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": {
+                "route_id": "gb-to-cn",
+                "warehouse_id": "gb",
+                "calculation_complete": true,
+                "usable_for_ranking": true,
+                "total_cost_cny": 112.5,
+                "components_cny": {
+                  "sale": 87.5,
+                  "tax": 0,
+                  "shipping": 10
+                },
+                "transfer_to_china_cny": 15,
+                "notes": []
+              },
+              "routes": [
+                {
+                  "route_id": "gb-to-cn",
+                  "warehouse_id": "gb",
+                  "calculation_complete": true,
+                  "usable_for_ranking": true,
+                  "total_cost_cny": 112.5,
+                  "components_cny": {
+                    "sale": 87.5,
+                    "tax": 0,
+                    "shipping": 10
+                  },
+                  "transfer_to_china_cny": 15,
+                  "notes": []
+                }
+              ],
+              "partial_quotes": []
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Evening Tides",
+                "target": "Evening Tides",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "Demo Ensemble",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.match",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 一致",
+                "observed": 2001,
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "英国仓 → 中国仓",
+                "observed": {
+                  "cost_cny": 112.5
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 6",
+                "observed": {
+                  "tier": 6,
+                  "image_type": "unknown"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.present",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "有货源图片",
+                "observed": 6,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": true
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Evening Tides",
+                "quote": "Evening Tides",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "Demo Ensemble",
+                "quote": "Demo Ensemble",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-b",
+            "summary": "到仓成本 ¥112.50，服务器建议报价 ¥135.00。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "provisional",
+              "costCny": 112.5,
+              "quoteCny": 135,
+              "profitCny": 22.5,
+              "floorCny": 122.5,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "Demo Ensemble《Evening Tides》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "91000002:DSUS:DEMO-2",
+          "order": 2,
+          "platform": "Discogs",
+          "platform_code": "DSUS",
+          "product_id": "DEMO-b-2",
+          "title": "Demo Ensemble — Evening Tides CD 2001",
+          "url": "https://example.com/nautilus-demo/product-b-2",
+          "images": [],
+          "seller": {
+            "nickname": "Demo Seller 2",
+            "ship_from": "UK",
+            "rating_count_raw": 102
+          },
+          "seller_rate_percent": 99.5,
+          "condition": {
+            "m_media": "Near Mint (NM or M-)",
+            "s_sleeve": "Very Good Plus (VG+)",
+            "original_condition": {
+              "comments": "Synthetic seller description. This is not a real listing."
+            }
+          },
+          "description": {
+            "original_description": "Synthetic seller description."
+          },
+          "original_price": {
+            "currency": "GBP",
+            "sale_type": "fixed_price"
+          },
+          "display_tags": [],
+          "ranking": {
+            "rank": 2,
+            "candidate_rank": 2,
+            "candidate_id": "DSUS:DEMO-2",
+            "eligibility": "manual_review",
+            "identity_tier_label": "演示作品匹配",
+            "estimated_cost": {
+              "cost_rule_version": "demo-only",
+              "selected_route": null,
+              "routes": [],
+              "partial_quotes": [
+                {
+                  "warehouse_id": "us",
+                  "components_cny": {
+                    "sale": 80,
+                    "tax": null,
+                    "shipping": null
+                  },
+                  "transfer_to_china_cny": 20,
+                  "total_cost_cny": null,
+                  "usable_for_ranking": false,
+                  "notes": [
+                    "未提供运费"
+                  ]
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "work.title.match",
+                "module": "work",
+                "dimension": "title",
+                "label": "作品名称 一致",
+                "observed": "Evening Tides",
+                "target": "Evening Tides",
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "work.artist.match",
+                "module": "work",
+                "dimension": "artist",
+                "label": "艺人 一致",
+                "observed": "Demo Ensemble",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.year.missing",
+                "module": "version",
+                "dimension": "year",
+                "label": "版本年代 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.country.match",
+                "module": "version",
+                "dimension": "country",
+                "label": "发行地区 一致",
+                "observed": "UK",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.medium.match",
+                "module": "version",
+                "dimension": "medium",
+                "label": "介质 一致",
+                "observed": "CD",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.release_id.missing",
+                "module": "version",
+                "dimension": "release_id",
+                "label": "Release ID 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.barcode.missing",
+                "module": "version",
+                "dimension": "barcode",
+                "label": "Barcode 缺失",
+                "observed": null,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.catalog_number.match",
+                "module": "version",
+                "dimension": "catalog_number",
+                "label": "Catno 一致",
+                "observed": "DEMO-001",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "version.label.match",
+                "module": "version",
+                "dimension": "label",
+                "label": "厂牌 一致",
+                "observed": "Demo Records",
+                "target": null,
+                "state": "match",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.media.pass",
+                "module": "condition",
+                "dimension": "media",
+                "label": "盘面 · Near Mint",
+                "observed": "Near Mint",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "condition.sleeve.pass",
+                "module": "condition",
+                "dimension": "sleeve",
+                "label": "封套 · Very Good Plus",
+                "observed": "Very Good Plus",
+                "target": null,
+                "state": "pass",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "cost.lowest_path.present",
+                "module": "cost",
+                "dimension": "lowest_path",
+                "label": "成本待核实",
+                "observed": null,
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.platform_tier.present",
+                "module": "images",
+                "dimension": "platform_tier",
+                "label": "图片与平台优先级 3",
+                "observed": {
+                  "tier": 3,
+                  "image_type": "none"
+                },
+                "target": null,
+                "state": "present",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              },
+              {
+                "code": "images.supplied.missing",
+                "module": "images",
+                "dimension": "supplied",
+                "label": "未提供货源图片",
+                "observed": 0,
+                "target": null,
+                "state": "missing",
+                "effect": "info",
+                "reason": "虚构演示数据，仅展示接口字段。",
+                "evidence": []
+              }
+            ],
+            "match": {
+              "status": "work_match"
+            },
+            "reasons": [
+              "演示排名，来自结果 JSON"
+            ],
+            "review_tasks": []
+          },
+          "unified_facts": {
+            "items": [
+              {
+                "obi": false
+              }
+            ],
+            "issues": []
+          },
+          "dimensions29": {
+            "10": [],
+            "11": [],
+            "12": [],
+            "13": [
+              {
+                "value": "CD",
+                "quote": "CD",
+                "path": "/synthetic/title"
+              }
+            ],
+            "14": [],
+            "15": [],
+            "16": [],
+            "17": [],
+            "18": [],
+            "19": [],
+            "20": [],
+            "21": [],
+            "22": [],
+            "23": [],
+            "24": [],
+            "25": [],
+            "26": [],
+            "27": [],
+            "28": [],
+            "29": [],
+            "01": [],
+            "02": [],
+            "03": [],
+            "04": [
+              {
+                "value": "Evening Tides",
+                "quote": "Evening Tides",
+                "path": "/synthetic/title"
+              }
+            ],
+            "05": [
+              {
+                "value": "Demo Ensemble",
+                "quote": "Demo Ensemble",
+                "path": "/synthetic/title"
+              }
+            ],
+            "06": [],
+            "07": [],
+            "08": [],
+            "09": []
+          },
+          "semantics_status": "completed",
+          "extraction_findings": [],
+          "quote_pricing": {
+            "userProfileId": "DEMO-PROFILE-b",
+            "summary": "本条暂无可用报价。",
+            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "result": {
+              "status": "unavailable",
+              "costCny": null,
+              "quoteCny": null,
+              "profitCny": null,
+              "floorCny": null,
+              "explanationContext": {
+                "budgetCny": null,
+                "marketCeilingCny": null
+              }
+            }
+          },
+          "quote_copy": {
+            "status": "completed",
+            "description": "Demo Ensemble《Evening Tides》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。",
+            "reviewed": false
+          }
+        }
+      ],
+      "rerank": {
+        "version": "demo",
+        "summary": {
+          "total": 2,
+          "eligible": 1,
+          "manual_review": 1,
+          "excluded": 0
+        }
+      },
+      "sales_history": {
+        "lowest_cny": 80,
+        "median_cny": 140,
+        "highest_cny": 230,
+        "is_example": true
+      }
+    }
+  ],
+  "totals": {
+    "releases": 2,
+    "sources": 9
+  },
+  "tag_groups": {
+    "work": "作品",
+    "version": "版本",
+    "images": "图片",
+    "condition": "品相",
+    "cost": "成本"
+  },
+  "pricing_context": {
+    "userProfiles": [
+      {
+        "id": "DEMO-PROFILE-a",
+        "wishId": "DEMO-WISH-a",
+        "targetReleaseId": "91000001",
+        "nickname": "示例用户 A",
+        "pricing": {},
+        "provenance": {
+          "source": "synthetic-demo"
+        }
+      },
+      {
+        "id": "DEMO-PROFILE-b",
+        "wishId": "DEMO-WISH-b",
+        "targetReleaseId": "91000002",
+        "nickname": "示例用户 B",
+        "pricing": {},
+        "provenance": {
+          "source": "synthetic-demo"
+        }
+      }
+    ],
+    "wishBindings": {
+      "91000001": {
+        "profileId": "DEMO-PROFILE-a",
+        "wishId": "DEMO-WISH-a"
+      },
+      "91000002": {
+        "profileId": "DEMO-PROFILE-b",
+        "wishId": "DEMO-WISH-b"
+      }
+    },
+    "defaultUserId": "DEMO-PROFILE-a"
+  },
+  "limitations": [
+    "全部为虚构样例，无真实用户、货源、报价或交易。"
+  ]
+}

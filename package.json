@@ -1,0 +1,11 @@
+{
+  "name": "nautilus-quote-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static renderer for nautilus-quote-result/1, with no model or pricing engine",
+  "scripts": {
+    "start": "python3 -m http.server 19024 --bind 127.0.0.1",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "engines": {"node": ">=18"}
+}
