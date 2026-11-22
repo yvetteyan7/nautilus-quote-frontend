@@ -440,17 +440,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
-            "summary": "到仓成本 ¥112.50，服务器建议报价 ¥135.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥112.50 ×（1＋30%）＝¥146.25。",
+            "reason": "到仓成本 ¥112.50 ×（1＋30%）＝¥146.25。",
             "result": {
               "status": "provisional",
               "costCny": 112.5,
-              "quoteCny": 135,
-              "profitCny": 22.5,
-              "floorCny": 122.5,
+              "quoteCny": 146.25,
+              "profitCny": 33.75,
+              "floorCny": 112.5,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 146.25,
+                "amountCny": 50.34,
+                "remainingCny": 95.91,
+                "baseCny": 48.75,
+                "adjustmentCny": 1.59
               }
             }
           },
@@ -774,17 +784,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
-            "summary": "到仓成本 ¥125.00，服务器建议报价 ¥150.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥125.00 ×（1＋30%）＝¥162.50。",
+            "reason": "到仓成本 ¥125.00 ×（1＋30%）＝¥162.50。",
             "result": {
               "status": "provisional",
               "costCny": 125,
-              "quoteCny": 150,
-              "profitCny": 25,
-              "floorCny": 135,
+              "quoteCny": 162.5,
+              "profitCny": 37.5,
+              "floorCny": 125,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 162.5,
+                "amountCny": 60.15,
+                "remainingCny": 102.35,
+                "baseCny": 54.17,
+                "adjustmentCny": 5.98
               }
             }
           },
@@ -1121,17 +1141,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
-            "summary": "到仓成本 ¥137.50，服务器建议报价 ¥165.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥137.50 ×（1＋30%）＝¥178.75。",
+            "reason": "到仓成本 ¥137.50 ×（1＋30%）＝¥178.75。",
             "result": {
               "status": "provisional",
               "costCny": 137.5,
-              "quoteCny": 165,
-              "profitCny": 27.5,
-              "floorCny": 147.5,
+              "quoteCny": 178.75,
+              "profitCny": 41.25,
+              "floorCny": 137.5,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 178.75,
+                "amountCny": 49.73,
+                "remainingCny": 129.02,
+                "baseCny": 59.58,
+                "adjustmentCny": -9.85
               }
             }
           },
@@ -1468,17 +1498,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
-            "summary": "到仓成本 ¥150.00，服务器建议报价 ¥180.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥150.00 ×（1＋30%）＝¥195.00。",
+            "reason": "到仓成本 ¥150.00 ×（1＋30%）＝¥195.00。",
             "result": {
               "status": "provisional",
               "costCny": 150,
-              "quoteCny": 180,
-              "profitCny": 30,
-              "floorCny": 160,
+              "quoteCny": 195,
+              "profitCny": 45,
+              "floorCny": 150,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 195,
+                "amountCny": 73.8,
+                "remainingCny": 121.2,
+                "baseCny": 65,
+                "adjustmentCny": 8.8
               }
             }
           },
@@ -1815,17 +1855,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
-            "summary": "到仓成本 ¥162.50，服务器建议报价 ¥195.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥162.50 ×（1＋30%）＝¥211.25。",
+            "reason": "到仓成本 ¥162.50 ×（1＋30%）＝¥211.25。",
             "result": {
               "status": "provisional",
               "costCny": 162.5,
-              "quoteCny": 195,
-              "profitCny": 32.5,
-              "floorCny": 172.5,
+              "quoteCny": 211.25,
+              "profitCny": 48.75,
+              "floorCny": 162.5,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 211.25,
+                "amountCny": 65.28,
+                "remainingCny": 145.97,
+                "baseCny": 70.42,
+                "adjustmentCny": -5.14
               }
             }
           },
@@ -2162,17 +2212,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
-            "summary": "到仓成本 ¥175.00，服务器建议报价 ¥210.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥175.00 ×（1＋30%）＝¥227.50。",
+            "reason": "到仓成本 ¥175.00 ×（1＋30%）＝¥227.50。",
             "result": {
               "status": "provisional",
               "costCny": 175,
-              "quoteCny": 210,
-              "profitCny": 35,
-              "floorCny": 185,
+              "quoteCny": 227.5,
+              "profitCny": 52.5,
+              "floorCny": 175,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 227.5,
+                "amountCny": 71.6,
+                "remainingCny": 155.9,
+                "baseCny": 75.83,
+                "adjustmentCny": -4.23
               }
             }
           },
@@ -2510,17 +2570,20 @@
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-a",
             "summary": "本条暂无可用报价。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "reason": "本条暂无可用报价。",
             "result": {
               "status": "unavailable",
               "costCny": 187.5,
               "quoteCny": null,
               "profitCny": null,
-              "floorCny": 197.5,
+              "floorCny": 187.5,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
-              }
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": null
             }
           },
           "quote_copy": {
@@ -2981,17 +3044,27 @@
           "extraction_findings": [],
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-b",
-            "summary": "到仓成本 ¥112.50，服务器建议报价 ¥135.00。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "summary": "到仓成本 ¥112.50 ×（1＋30%）＝¥146.25。",
+            "reason": "到仓成本 ¥112.50 ×（1＋30%）＝¥146.25。",
             "result": {
               "status": "provisional",
               "costCny": 112.5,
-              "quoteCny": 135,
-              "profitCny": 22.5,
-              "floorCny": 122.5,
+              "quoteCny": 146.25,
+              "profitCny": 33.75,
+              "floorCny": 112.5,
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": {
+                "rule": "quote-prepayment/1",
+                "quoteCny": 146.25,
+                "amountCny": 53.12,
+                "remainingCny": 93.13,
+                "baseCny": 48.75,
+                "adjustmentCny": 4.37
               }
             }
           },
@@ -3301,7 +3374,7 @@
           "quote_pricing": {
             "userProfileId": "DEMO-PROFILE-b",
             "summary": "本条暂无可用报价。",
-            "reason": "这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。",
+            "reason": "本条暂无可用报价。",
             "result": {
               "status": "unavailable",
               "costCny": null,
@@ -3311,7 +3384,10 @@
               "explanationContext": {
                 "budgetCny": null,
                 "marketCeilingCny": null
-              }
+              },
+              "version": "source-user-quote-v3-priceratio",
+              "priceRatio": 0.3,
+              "prepayment": null
             }
           },
           "quote_copy": {
@@ -3356,7 +3432,11 @@
         "wishId": "DEMO-WISH-a",
         "targetReleaseId": "91000001",
         "nickname": "示例用户 A",
-        "pricing": {},
+        "pricing": {
+          "priceRatio": 0.3,
+          "priceRatioStatus": "valid",
+          "pricingMode": "user-priceratio"
+        },
         "provenance": {
           "source": "synthetic-demo"
         }
@@ -3366,7 +3446,11 @@
         "wishId": "DEMO-WISH-b",
         "targetReleaseId": "91000002",
         "nickname": "示例用户 B",
-        "pricing": {},
+        "pricing": {
+          "priceRatio": 0.3,
+          "priceRatioStatus": "valid",
+          "pricingMode": "user-priceratio"
+        },
         "provenance": {
           "source": "synthetic-demo"
         }

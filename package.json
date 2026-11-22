@@ -1,6 +1,6 @@
 {
   "name": "nautilus-quote-frontend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Static renderer for nautilus-quote-result/1, with no model or pricing engine",
   "scripts": {

@@ -73,7 +73,7 @@ function returnedQuoteText(key,price){
   const stored=source().quote_pricing,value=stored?.[key];
   if(typeof value!=='string')return null;
   const changed=Number.isFinite(price)&&Number.isFinite(stored.result.quoteCny)&&Math.abs(price-stored.result.quoteCny)>=.005;
-  return value+(changed?'\n已人工改价，机器建议仍为 '+cash(stored.result.quoteCny)+'；以上解释服务器定价依据。':'');
+  return value+(changed?' 人工改价 '+cash(price)+'。':'');
 }
 
 function warehouseName(code) {return ({gb:'英国',uk:'英国',us:'美国',jp:'日本',cn:'中国'}[String(code).toLowerCase()] || text(code));}
@@ -96,7 +96,7 @@ function syncPlatformFilter() {
   all.checked=count===inputs.length;all.indeterminate=count>0&&count<inputs.length;
 }
 function setPlatformSelection(selection) {
-  cancelQuoteMaterialDownload();
+
   state.platformSelection=selection;
   syncPlatformFilter();
   const visible=filteredSources(),previous=state.source;
@@ -219,7 +219,7 @@ function renderTasks() {
 }
 async function selectRelease(id,snapshot=null) {
   const entry=data.releases.find(r=>r.id===id);if(!entry)return;
-  cancelQuoteMaterialDownload();
+
   const sequence=++selectionSequence;
   state.release=id;state.source=null;state.cards={};state.reasonPage=0;state.platformSelection=null;
   renderTasks();
@@ -388,29 +388,27 @@ function syncSelectedCards() {
 }
 function selectSource(id) {
   if(id===state.source)return;
-  cancelQuoteMaterialDownload();
+
   state.source=id;state.reasonPage=0;chooseRoute();
   // Preserve card DOM, image loads, keyboard focus and the source scroll position.
   syncSelectedCards();renderSelection();
 }
-let quoteImageEdit=null,quoteImageTrigger=null,quoteMaterialJob=null;
+let quoteImageEdit=null,quoteImageTrigger=null;
 function quoteSelectedImages(s=source()) {return QuoteImages.selected(s,draft(s).quote_image_urls);}
 function quoteImagePreview(image,s,css='quote-image-preview') {
   return '<button type="button" class="'+css+'" data-photo="'+escape(s.id)+'" data-index="'+s.images.indexOf(image)+'" aria-label="放大第 '+(s.images.indexOf(image)+1)+' 张货源图片"><img src="'+escape(appURL(image.local))+'" alt="第 '+(s.images.indexOf(image)+1)+' 张货源图片" loading="lazy" decoding="async"></button>';
 }
 function quoteImagesHTML(s) {
   const all=QuoteImages.available(s),selected=quoteSelectedImages(s);
-  return '<section class="quote-section quote-images-section" aria-labelledby="quote-images-title"><div class="quote-section-heading"><h4 id="quote-images-title">报价图片 <span class="quote-image-total">'+selected.length+' / '+all.length+'</span></h4><button type="button" class="quiet-button" id="edit-quote-images" '+(!all.length?'disabled':'')+'>编辑图片</button></div><div class="quote-image-strip">'+selected.map(image=>'<div class="quote-image-tile">'+quoteImagePreview(image,s)+'<button type="button" class="quote-image-remove" data-remove-quote-image="'+escape(image.url)+'" aria-label="移除第 '+(s.images.indexOf(image)+1)+' 张报价图片">×</button></div>').join('')+'</div>'+(!selected.length?'<p class="quote-images-empty">'+(all.length?'尚未选择图片':'本货源暂无可选图片')+'</p>':'')+'<button type="button" id="download-quote-materials" '+(!selected.length?'disabled':'')+'>下载图文素材</button><p id="quote-image-status" role="status"></p></section>';
+  return '<section class="quote-section quote-images-section" aria-labelledby="quote-images-title"><div class="quote-section-heading"><h4 id="quote-images-title">报价图片 <span class="quote-image-total">'+selected.length+' / '+all.length+'</span></h4><button type="button" class="quiet-button" id="edit-quote-images" '+(!all.length?'disabled':'')+'>编辑图片</button></div><div class="quote-image-strip">'+selected.map(image=>'<div class="quote-image-tile">'+quoteImagePreview(image,s)+'<button type="button" class="quote-image-remove" data-remove-quote-image="'+escape(image.url)+'" aria-label="移除第 '+(s.images.indexOf(image)+1)+' 张报价图片">×</button></div>').join('')+'</div>'+(!selected.length?'<p class="quote-images-empty">'+(all.length?'尚未选择图片':'本货源暂无可选图片')+'</p>':'')+'<p id="quote-image-status" role="status"></p></section>';
 }
 function bindQuoteImages() {
   const scope=$('.quote-images-section');if(!scope)return;
   bindImages(scope);
   $('#edit-quote-images').addEventListener('click',event=>openQuoteImagePicker(event.currentTarget));
   scope.querySelectorAll('[data-remove-quote-image]').forEach(button=>button.addEventListener('click',()=>saveQuoteImageSelection(quoteSelectedImages().filter(image=>image.url!==button.dataset.removeQuoteImage).map(image=>image.url))));
-  $('#download-quote-materials').addEventListener('click',downloadQuoteMaterials);
 }
 function saveQuoteImageSelection(urls) {
-  cancelQuoteMaterialDownload();
   const s=source();captureDraft(false);
   drafts[draftKey(s)].quote_image_urls=QuoteImages.selected(s,urls).map(image=>image.url);
   const saved=persist();
@@ -442,49 +440,6 @@ function syncQuoteImagePicker() {
   });
   $('#quote-image-picker-count').textContent='已选 '+quoteImageEdit.urls.size+' / '+quoteImageEdit.images.length+' 张';
 }
-function cancelQuoteMaterialDownload() {
-  if(!quoteMaterialJob)return;
-  quoteMaterialJob.abort();quoteMaterialJob=null;
-  if($('#download-quote-materials')){
-    $('#download-quote-materials').disabled=!quoteSelectedImages().length;
-    $('#quote-image-status').textContent='';
-  }
-}
-async function downloadQuoteMaterials() {
-  const s=source(),images=quoteSelectedImages(s),description=$('#quote-description').value;
-  if(!images.length||quoteMaterialJob)return;
-  const job=new AbortController();quoteMaterialJob=job;
-  const button=$('#download-quote-materials'),status=$('#quote-image-status');button.disabled=true;
-  const files=[];let size=0;
-  try {
-    // Capture this source's selection and copy before any asynchronous image requests.
-    for(let index=0;index<images.length;index++){
-      if(job.signal.aborted)return;
-      status.textContent='正在准备原图 '+(index+1)+' / '+images.length+'…';
-      const image=images[index];
-      try {
-        const response=await fetch(appURL(image.local),{signal:job.signal});
-        const extension=QuoteImages.extensions[(response.headers.get('Content-Type')||'').split(';')[0].trim()];
-        if(!response.ok)throw new Error('HTTP '+response.status);
-        if(!extension)throw new Error('不支持的图片格式：'+(response.headers.get('Content-Type')||'未知'));
-        const bytes=new Uint8Array(await response.arrayBuffer());
-        if(!bytes.length)throw new Error('图片为空');
-        size+=bytes.length;if(size>128*1024*1024)throw new Error('素材超过128MB，请分批选择');
-        files.push({name:String(index+1).padStart(2,'0')+'.'+extension,bytes});
-      } catch(error) {
-        if(job.signal.aborted)return;
-        throw new Error('第 '+(s.images.indexOf(image)+1)+' 张原图下载失败：'+error.message+'。跨域图片需要允许 CORS，或配置同域图片代理。');
-      }
-    }
-    if(description.trim())files.push({name:'报价说明.txt',bytes:new TextEncoder().encode(description)});
-    if(job.signal.aborted)return;
-    const blob=QuoteImages.zip(files),url=URL.createObjectURL(blob),link=document.createElement('a');
-    link.href=url;link.download=('报价素材-'+s.product_id).replace(/[\\/:*?"<>|\x00-\x1f]/g,'_')+'.zip';
-    document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
-    status.textContent='已准备 '+images.length+' 张原图'+(description.trim()?'和报价说明':'')+'，请从下载文件发送。';
-  } catch(error) {if(!job.signal.aborted)status.textContent=error.message;}
-  finally {if(quoteMaterialJob===job){quoteMaterialJob=null;button.disabled=false;}}
-}
 $('#quote-image-picker-close').addEventListener('click',()=>$('#quote-image-picker').close());
 $('#quote-image-picker-cancel').addEventListener('click',()=>$('#quote-image-picker').close());
 $('#quote-image-picker').addEventListener('close',()=>{
@@ -507,7 +462,7 @@ function renderSelection() {
   if(!filteredSources().length){$('#selection-panel').innerHTML='<div class="empty">暂无可报价货源</div>';return;}
   if(release().import_context?.hide_pricing_controls){renderRankingSelection();return;}
   const s=source(),result=pricingResult(),available=result.quoteCny!==null;
-  $('#selection-panel').innerHTML=(isUnified(release())?unifiedSelection(s,release()):'')+'<section class="quote strategy-quote"><div class="quote-heading"><h3>用户定价</h3><p class="quote-route">'+escape(platform(s))+' · '+escape(s.product_id)+'</p></div><p class="bound-pricing-user">'+escape(quoteProfile.nickname)+' · '+(result.quoteCny===null?'暂不可报价':result.status==='ready'?'建议报价':'待核实试算价')+'</p><div class="quote-price"><span>¥</span><input id="quote-price" type="number" min="0.01" max="999999" step="any" inputmode="decimal" aria-label="报价金额（人民币）" aria-describedby="quote-message" placeholder="暂无法报价" '+(available?'':'disabled')+' value="'+escape(available?quoteInputValue(s):'')+'"><div class="quote-stepper"><button type="button" data-quote-step="1" aria-label="报价增加1元" title="增加1元">▴</button><button type="button" data-quote-step="-1" aria-label="报价减少1元" title="减少1元">▾</button></div></div><div class="machine-quote"><span>机器建议 <b>'+cash(result.quoteCny)+'</b></span><button class="quiet-button" id="reset-quote" '+(available?'':'disabled')+'>恢复机器价</button></div><div class="strategy-profit"><span>预计利润 <strong id="quote-profit">—</strong></span><span id="quote-markup"></span></div><div class="quote-sections"><section class="strategy-reason quote-section" aria-labelledby="pricing-reason-title"><div class="quote-section-heading"><h4 id="pricing-reason-title">定价理由</h4><span>内部参考</span></div><p id="quote-reason"></p><details class="pricing-full"><summary>完整定价依据</summary><p id="pricing-full-reason"></p></details></section>'+quoteImagesHTML(s)+'<section class="quote-description-section quote-section" aria-labelledby="quote-description-title"><div class="quote-section-heading"><h4 id="quote-description-title"><label for="quote-description">报价说明</label></h4><span>面向用户</span></div><textarea id="quote-description" rows="2" placeholder="本轮仅生成每个心愿前六条候选的报价说明，其余可人工填写。">'+escape(QuoteDescriptions.resolveSource(s,draft()))+'</textarea><button type="button" id="copy-customer-message">复制报价说明</button></section></div><p class="quote-message" id="quote-message" aria-live="polite"></p><button class="primary" id="save-draft">保存报价到本机</button></section>';
+  $('#selection-panel').innerHTML=(isUnified(release())?unifiedSelection(s,release()):'')+'<section class="quote strategy-quote"><div class="quote-heading"><h3>用户定价</h3><p class="quote-route">'+escape(platform(s))+' · '+escape(s.product_id)+'</p></div><p class="bound-pricing-user">'+escape(quoteProfile.nickname)+' · '+(result.quoteCny===null?'暂不可报价':result.status==='ready'?'建议报价':'待核实试算价')+'</p><div class="quote-price"><span>¥</span><input id="quote-price" type="number" min="0.01" max="999999" step="any" inputmode="decimal" aria-label="报价金额（人民币）" aria-describedby="quote-message" placeholder="暂无法报价" '+(available?'':'disabled')+' value="'+escape(available?quoteInputValue(s):'')+'"><div class="quote-stepper"><button type="button" data-quote-step="1" aria-label="报价增加1元" title="增加1元">▴</button><button type="button" data-quote-step="-1" aria-label="报价减少1元" title="减少1元">▾</button></div></div><div class="machine-quote"><span>机器建议 <b>'+cash(result.quoteCny)+'</b></span><button class="quiet-button" id="reset-quote" '+(available?'':'disabled')+'>恢复机器价</button></div><div class="quote-prepayment"><label for="quote-prepayment">预付金额</label><output id="quote-prepayment" aria-live="polite">—</output></div><div class="strategy-profit"><span>预计利润 <strong id="quote-profit">—</strong></span><span id="quote-markup"></span></div><div class="quote-sections"><section class="strategy-reason quote-section" aria-labelledby="pricing-reason-title"><div class="quote-section-heading"><h4 id="pricing-reason-title">定价理由</h4></div><p id="quote-reason"></p></section>'+quoteImagesHTML(s)+'<section class="quote-description-section quote-section" aria-labelledby="quote-description-title"><div class="quote-section-heading"><h4 id="quote-description-title"><label for="quote-description">报价说明</label></h4><span>面向用户</span></div><textarea id="quote-description" rows="2" placeholder="本轮仅生成每个心愿前六条候选的报价说明，其余可人工填写。">'+escape(QuoteDescriptions.resolveSource(s,draft()))+'</textarea></section></div><p class="quote-message" id="quote-message" aria-live="polite"></p><button class="primary" id="save-draft" title="保存当前报价到本机">报价</button></section>';
   $('#quote-price').addEventListener('input',()=>{captureDraft(false);updateQuote();});
   $('#quote-description').addEventListener('input',()=>{resizeQuoteDescription();captureDraft(false);updateQuote();});
   $('#quote-price').addEventListener('keydown',event=>{
@@ -518,7 +473,6 @@ function renderSelection() {
   document.querySelectorAll('[data-quote-step]').forEach(button=>button.addEventListener('click',()=>stepQuotePrice(Number(button.dataset.quoteStep))));
   $('#reset-quote').addEventListener('click',()=>{const value=pricingResult().quoteCny;if(value===null)return;$('#quote-price').value=value.toFixed(2);captureDraft(false);updateQuote();});
   $('#save-draft').addEventListener('click',()=>{if(!updateQuote())return;if(captureDraft(true)){$('#quote-message').textContent='报价、图片及说明已保存到本机';notify('报价、图片及说明已保存到本机');}else{$('#quote-message').textContent='保存失败，请重试。';$('#quote-message').classList.add('error');}});
-  $('#copy-customer-message').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#quote-description').value);notify('报价说明已复制');}catch{notify('复制失败，请手动选择说明框内文字复制');}});
   bindQuoteImages();updateQuote();resizeQuoteDescription();
 }
 let rankingSelectionSequence=0;
@@ -549,7 +503,6 @@ function stepQuotePrice(direction) {
 function renderQuoteReason() {
   const result=pricingResult(),price=$('#quote-price').valueAsNumber;
   $('#quote-reason').textContent=returnedQuoteText('summary',price)??StrategyQuote.summary(result,price);
-  $('#pricing-full-reason').textContent=returnedQuoteText('reason',price)??QuotePricing.explain(result,price);
   const validAmount=result.quoteCny!==null&&Number.isFinite(price)&&price>0;
   $('#quote-profit').textContent=validAmount?cash(price-result.costCny):'—';
   $('#quote-markup').textContent=validAmount?'成本加价 '+((price/result.costCny-1)*100).toFixed(1)+'%':'';
@@ -616,9 +569,13 @@ function clearReturnState() {
   const next={...history.state};delete next.quoteWorkbenchReturn;history.replaceState(next,'');
 }
 window.addEventListener('pageshow',event=>{if(event.persisted)clearReturnState();});
+function quotePrepayment(price) {
+  if(!StrategyQuote.validation(pricingResult(),price).valid)return null;
+  return StrategyQuote.prepaymentFor(price,release(),source(),selectedUserId);
+}
 function captureDraft(save) {
   const p=$('#quote-price').value,price=p===''?null:Number(p);
-  drafts[draftKey()]={...draft(),quote_user_id:selectedUserId,quote_user_name:quoteProfile.nickname,release_id:state.release,source_id:source().product_id,platform:platform(source()),price,pricing_rule:quotePricingRule,pricing_fingerprint:pricingFingerprint(source()),pricing_assumptions:{...quoteUser},pricing_result:pricingResult(),route:state.route,route_id:route()?.route_id,cost_rule_version:source().ranking.estimated_cost.cost_rule_version,estimate_cost:currentCost(),quote_reason:quoteReason(release(),price),quote_description:$('#quote-description').value,quote_image_urls:quoteSelectedImages().map(image=>image.url),updated_at:new Date().toISOString()};
+  drafts[draftKey()]={...draft(),quote_user_id:selectedUserId,quote_user_name:quoteProfile.nickname,release_id:state.release,source_id:source().product_id,platform:platform(source()),price,prepayment:quotePrepayment(price),pricing_rule:quotePricingRule,pricing_fingerprint:pricingFingerprint(source()),pricing_assumptions:{...quoteUser},pricing_result:pricingResult(),route:state.route,route_id:route()?.route_id,cost_rule_version:source().ranking.estimated_cost.cost_rule_version,estimate_cost:currentCost(),quote_reason:quoteReason(release(),price),quote_description:$('#quote-description').value,quote_image_urls:quoteSelectedImages().map(image=>image.url),updated_at:new Date().toISOString()};
   if(save){const ok=persist();if(ok)window.dispatchEvent(new CustomEvent('nautilus:quote-saved',{detail:exportSelection()}));return ok;}
   return true;
 }
@@ -626,10 +583,9 @@ function updateQuote() {
   const input=$('#quote-price');if(!input)return false;
   const result=pricingResult(),check=StrategyQuote.validation(result,input.valueAsNumber);
   renderQuoteReason();
+  $('#quote-prepayment').textContent=cash(quotePrepayment(input.valueAsNumber)?.amountCny);
   const valid=check.valid&&input.validity.valid;
   $('#save-draft').disabled=!valid;
-  $('#copy-customer-message').disabled=!$('#quote-description').value.trim();
-  $('#download-quote-materials').disabled=!quoteSelectedImages().length||!!quoteMaterialJob;
   document.querySelectorAll('[data-quote-step]').forEach(button=>{
     const next=(Math.round(input.valueAsNumber*100)+Number(button.dataset.quoteStep)*100)/100;
     button.disabled=input.disabled||!Number.isFinite(next)||next<Number(input.min)||next>Number(input.max);
@@ -695,6 +651,7 @@ function exportSelection(){
     release_id:state.release, source_id:s.id, platform_code:s.platform_code, product_id:s.product_id,
     original_rank:s.ranking.rank, candidate_rank:s.ranking.candidate_rank,
     quote_cny:Number.isFinite(price)?price:null, machine_quote_cny:s.quote_pricing.result.quoteCny,
+    prepayment:quotePrepayment(price),
     description:$('#quote-description')?.value??QuoteDescriptions.resolveSource(s,saved),
     image_urls:QuoteImages.selected(s,saved.quote_image_urls).map(image=>image.url),
     validation:valid, updated_at:new Date().toISOString()
@@ -715,7 +672,7 @@ async function loadResult(result,options={}){
   const raw=JSON.stringify(result),id=await resultDigest(raw);
   const prepared=ResultAdapter.prepare(result,{baseURL:appBase.href,imageURL:options.imageURL||config.imageURL,resultID:id});
   if(sequence!==importSequence)throw new Error('本次导入已被更新的结果替代');
-  cancelQuoteMaterialDownload();selectionSequence++;infoSequence++;
+  selectionSequence++;infoSequence++;
   document.querySelectorAll('dialog[open]').forEach(dialog=>dialog.close());
   activeResultID=id;activeRequestID=result.request_sha256;activeResult=JSON.parse(raw);
   records=prepared.records;data=prepared.index;pricingContext=null;quoteProfile=null;selectedUserId=null;
@@ -744,7 +701,7 @@ async function loadFromURL(value){
   if(sequence!==importSequence)throw new Error('本次加载已被更新的结果替代');
   return loadResult(result);
 }
-window.NautilusQuote=Object.freeze({version:'1.0.0',loadResult,loadFromURL,getSelection:exportSelection,
+window.NautilusQuote=Object.freeze({version:'1.1.0',loadResult,loadFromURL,getSelection:exportSelection,
   // ready means the DOM/API is ready, not that an automatic demo request has completed.
   ready:Promise.resolve(),
   getResult(){return activeResult?JSON.parse(JSON.stringify(activeResult)):null;}

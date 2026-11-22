@@ -2,7 +2,7 @@
 
 **把精排服务返回的 `nautilus-quote-result/1` JSON 直接渲染成报价工作台。** 纯 HTML / CSS / JavaScript，无框架、无 npm 依赖、无构建步骤，不需要启动精排服务。
 
-保留现有页面的心愿栏、目标样图、货源卡片、平台筛选、原始商品链接、卖家原文弹窗、成本明细、服务器报价与理由、报价图片选择、人工编辑和草稿导出。
+保留现有页面的心愿栏、目标样图、货源卡片、平台筛选、原始商品链接、卖家原文弹窗、成本明细、服务器报价、预付金额与简短理由、报价图片选择、人工编辑和草稿导出。
 
 ![工作台预览（全部为虚构示例）](docs/preview.jpg)
 
@@ -15,6 +15,14 @@
 ```
 
 前端不调用 Flash，不重新精排、核验作品或生成报价。筛选只隐藏货源，不改变原始排名。人工编辑只影响草稿，服务器原结果保留。
+
+## 本版定价与预付金额（1.1.0）
+
+- 服务器报价规则：到中国仓成本 ×（1＋用户原始 `priceratio`），四舍五入到分。例如 146.25 × 1.25 = **182.81 元**。这项“毛利”按成本加价解释，不是销售毛利率。
+- `priceratio` 缺失或无效时，服务器返回 `quoteCny: null`；前端不填默认加价率，不生成报价。
+- 预付金额读取 `quote_pricing.result.prepayment`。人工改价时，仅重新分配预付与尾款；总报价不变。旧结果未带该对象时，按相同版本规则兼容计算。
+- 预付基准约为报价三分之一，在 ±10 元范围内稳定浮动，限制为 0.01 元至总价；同一用户、心愿、货源和金额刷新后不变。`remainingCny` 是尾款，预付＋尾款始终等于报价。
+- 页面已去掉“下载图文素材”“复制报价说明”“内部参考”及展开的完整定价依据；底部按钮为“报价”。它仍保存本机草稿并触发 `nautilus:quote-saved`，尚未代替原平台的实际提交接口。
 
 ## 1. 先运行页面
 
@@ -110,7 +118,7 @@ frame.addEventListener('load', async () => {
 | `sources[].images / url` | 货源图片、原始商品页链接 |
 | `condition.original_condition.comments` | 卖家评论弹窗；原始文本仍可查看 |
 | `seller / seller_rate_percent` | 商家与好评数、好评率 |
-| `quote_pricing.result / summary / reason` | 服务器建议价、内部定价理由及完整依据 |
+| `quote_pricing.result / summary / reason` | 服务器建议价、一行定价理由 |
 | `quote_copy.description` | 面向用户的报价说明；仅 `status=completed` 时作为默认内容 |
 | `dimensions29` | 保留 01–29 原始字段及证据；页面不据此重新推断匹配结论 |
 | `pricing_context.wishBindings / userProfiles` | 防止把另一位用户的价格显示到当前心愿 |
@@ -125,7 +133,7 @@ frame.addEventListener('load', async () => {
 
 - `NautilusQuote.getSelection()`：读取当前选中货源、人工报价、说明和选中的**原图 URL**。
 - 顶部“导出当前报价”：下载同一份 `nautilus-quote-draft/1` 草稿 JSON。
-- 监听 `nautilus:quote-saved`：用户点击“保存报价到本机”且通过金额校验后触发。
+- 监听 `nautilus:quote-saved`：用户点击“报价”且通过金额校验后触发。
 
 ```js
 window.addEventListener('nautilus:quote-saved', async ({detail: draft}) => {
@@ -137,7 +145,7 @@ window.addEventListener('nautilus:quote-saved', async ({detail: draft}) => {
 
 iframe 模式在 `frame.contentWindow` 上监听这个事件，而不是父页面的 window。可运行示例演示了这一点。
 
-草稿包含 `wish_id`、`user_profile_id`、`release_id`、完整 `source_id`、`product_id`、原排名、`quote_cny`、机器建议价、`description`、`image_urls`、`validation` 和结果标识。完整结构见协议文档。
+草稿包含 `wish_id`、`user_profile_id`、`release_id`、完整 `source_id`、`product_id`、原排名、`quote_cny`、机器建议价、`prepayment`、`description`、`image_urls`、`validation` 和结果标识。完整结构见协议文档。
 
 **“保存到本机”不等于保存到平台，更不等于已发给用户。** 草稿存在浏览器 `localStorage`，按结果快照、用户和货源隔离。生产环境可把保存事件接到己方接口，再更改按钮及成功提示。`getSelection()` 和导出也允许查看尚未通过金额校验的草稿，调用方应检查 `validation.valid`；服务端仍必须复核。
 
@@ -145,7 +153,7 @@ iframe 模式在 `frame.contentWindow` 上监听这个事件，而不是父页�
 
 - 输入使用 `image.url` 的原始 HTTP(S) 地址。返回包中的 `/media/<hash>` 是原精排服务器的代理路径；本静态页会忽略它，不会误拼到对方域名。
 - 默认直接展示原图；`config.js.imageURL(url)` 可改成对方的同域图片代理地址。`loadResult(result, {imageURL})` 也支持逐次覆盖。
-- **显示跨域图片与下载跨域图片是两件事。** 图片可能可显示但不允许 JavaScript 下载；“下载图文素材”需要图片站允许 CORS，或己方提供图片代理。失败时明确提示，不会生成缺图素材包冒充成功。
+- 页面保留图片选择与预览；草稿导出原图 URL，由业务系统按选中的图片报价。
 - HTTPS 页面里的 HTTP 图片可能被浏览器拦截，应通过己方 HTTPS 代理解决。
 - 报价默认选择前四张货源图，可增减；目标版本参考图不混进报价图片。导出草稿始终保留原图 URL。
 - 图片代理由业务后端维护：限制来源域名/内网访问、校验响应类型、设置体积及超时上限。本仓库不附开放代理。
@@ -180,7 +188,7 @@ examples/                 # 仅在需要演示时部署；生产可关闭自动�
 
 生产配置建议：HTML、配置和 JSON 使用可更新缓存策略；静态资源用版本化发布目录；真实结果接口使用己方鉴权并设置私有缓存策略。页面无字体 CDN、分析埋点或第三方 JS。
 
-`index.html` 已给脚本和样式加 `?v=1.0.0`。后续升级时同步修改资源版本，或使用新的版本目录，避免新 HTML 配上旧缓存脚本。
+`index.html` 已给脚本和样式加 `?v=1.1.0`。后续升级时同步修改资源版本，或使用新的版本目录，避免新 HTML 配上旧缓存脚本。
 
 ## 7. 文件职责与验证
 
@@ -189,10 +197,10 @@ examples/                 # 仅在需要演示时部署；生产可关闭自动�
 | `index.html / style.css` | 页面骨架和现有视觉样式 |
 | `app.js` | UI 交互、导入 API、人工草稿导出 |
 | `result-adapter.js` | 结果契约校验、字段适配、图片地址转换；不跑业务规则 |
-| `returned-pricing.js` | 读取服务器报价及其已返回的改价上下限，无定价算法 |
+| `returned-pricing.js` | 读取服务器报价及改价上下限；仅计算人工改价后的预付分配，不生成机器报价 |
 | `tags-ui.js / rerank-ui.js` | 标签与服务器成本的展示 |
 | `platform-filter.js` | 平台计数、保持服务器序号的筛选 |
-| `quote-images.js` | 默认选四张、选图、浏览器内 ZIP 打包 |
+| `quote-images.js` | 默认选四张、选图与原图 URL 保留 |
 | `examples/` | 虚构数据、图片生成脚本、iframe 接入示例 |
 | `tests/` | 契约错误、排名保留、数据不变、图片和金额边界检查 |
 
@@ -203,6 +211,6 @@ node examples/make-demo.cjs        # 重新生成完全虚构的示例及本地�
 
 验收重点：正常导入后核对数量；切平台原序号不变；无成本不产生报价；选图与备注可导出；导入用户绑定错误/漏字段的 JSON 应拒绝。一次结果不能含两个相同 Release ID 的不同心愿，这是当前上游返回协议的限制，前端会明确拒绝混绑。
 
-本次交接验证（2026-11-22）：19 项自动检查通过；另外用 11 条和 131 条实际返回结果在本地导入，核对排名、标签、29 栏、报价和文案不变；浏览器验证了长列表、筛选、选图、素材 ZIP、草稿 JSON、错误拒绝，以及 iframe 双向接入。实际用户结果未提交到仓库。这些验证证明接入与展示，不重新评价模型识别准确率。
+本版（1.1.0）22 项自动检查通过；预付分配与服务端对照 2,548 组金额一致；浏览器确认人工改价、恢复机器价、刷新和父页面保存事件，事件中的预付＋尾款等于人工报价。此前已用 11 条和 131 条实际返回结果验证导入保真。实际用户结果未提交到仓库；这些检查验证接入与展示，不代表模型识别准确率。
 
-本仓库从 `nautilus-source-prefilter` 的前端拆出（基线 `2eba229`），服务端流程文档仍在[原仓库](https://github.com/yvetteyan7/nautilus-source-prefilter)。这里只维护结果展示与接入契约。
+本仓库从 `nautilus-source-prefilter` 的前端拆出（初始基线 `2eba229`，当前界面与预付规则同步至 `537b7fd`），服务端流程文档仍在[原仓库](https://github.com/yvetteyan7/nautilus-source-prefilter)。这里只维护结果展示与接入契约。

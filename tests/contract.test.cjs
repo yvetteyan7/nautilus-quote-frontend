@@ -77,3 +77,31 @@ test('a new result snapshot isolates prior draft prices',()=>{
 test('empty completed result renders an empty state',()=>{
   const r=copy();r.releases=[];r.totals={releases:0,sources:0};assert.equal(adapter.prepare(r).index.releases.length,0);
 });
+
+test('prepayment matches returned machine result and follows edited quote without mutation',()=>{
+  const r=copy(),release=r.releases[0],source=release.sources[0],profile=source.quote_pricing.userProfileId;
+  const original=JSON.stringify(r),q=source.quote_pricing.result;
+  assert.deepEqual(pricing.prepaymentFor(q.quoteCny,release,source,profile),q.prepayment);
+  const edited=pricing.prepaymentFor(200,release,source,profile);
+  assert.equal(edited.quoteCny,200);
+  assert.equal(Math.round(edited.amountCny*100)+Math.round(edited.remainingCny*100),20000);
+  assert.ok(Math.abs(edited.adjustmentCny)<=10);
+  assert.deepEqual(pricing.prepaymentFor(200,release,source,profile),edited);
+  assert.equal(JSON.stringify(r),original);
+  delete q.prepayment;
+  assert.deepEqual(pricing.prepaymentFor(200,release,source,profile),edited);
+  q.quoteCny=null;assert.equal(pricing.prepaymentFor(200,release,source,profile),null);
+});
+test('reject inconsistent deposit and quoted amount',()=>{
+  const r=copy();r.releases[0].sources[0].quote_pricing.result.prepayment.remainingCny+=1;
+  assert.throws(()=>adapter.prepare(r),/预付金额/);
+});
+test('prepayment clamps tiny amounts and rejects invalid input',()=>{
+  const context={sourceId:'example',releaseId:null,user:{caseId:'example'}};
+  for(const amount of [.01,1,5,182.81,999999]){
+    const d=pricing.prepayment(amount,context);
+    assert.ok(d.amountCny>=.01&&d.amountCny<=amount);
+    assert.equal(Math.round(d.amountCny*100)+Math.round(d.remainingCny*100),Math.round(amount*100));
+  }
+  for(const price of [null,NaN,-1,0,1.111,1000000])assert.equal(pricing.prepayment(price,context),null);
+});

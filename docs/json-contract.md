@@ -48,7 +48,7 @@ result
 │       ├── quote_pricing
 │       │   ├── userProfileId
 │       │   ├── summary / reason: 内部定价依据
-│       │   └── result: { costCny, quoteCny, status, floorCny, explanationContext, ... }
+│       │   └── result: { costCny, quoteCny, prepayment, status, floorCny, explanationContext, ... }
 │       └── quote_copy: { status, description, evidence, reviewed, ... }
 └── limitations[]
 ```
@@ -104,6 +104,24 @@ result
 
 这里的值是虚构样例，所以 `is_example` 为 `true`。真实结果未提供该对象时显示 `—`。此扩展只显示，不影响精排或机器报价。
 
+## 定价与预付款
+
+`result.version = source-user-quote-v3-priceratio` 表示按原始用户 `priceratio` 加价。
+`quoteCny` 是总报价，`priceRatio` 是成本加价比例。预付金额不是额外收费。
+
+`quote_pricing.result.prepayment` 与导出草稿的 `prepayment` 使用同一结构：
+
+| 字段 | 含义 |
+| --- | --- |
+| `rule` | `quote-prepayment/1` |
+| `quoteCny` | 此次预付计算对应的总报价 |
+| `amountCny` | 应预付金额 |
+| `remainingCny` | 尾款；与预付相加等于总报价 |
+| `baseCny` | 总报价三分之一，按分取整 |
+| `adjustmentCny` | 相对基准的调整，-10 到 10 元 |
+
+以上金额均为人民币数值，最多两位小数。无法报价时预付为 `null`。规则以用户 profile ID、精确版本 ID（非精确匹配为 null）、货源 candidate ID 和报价分数生成稳定调整；参考 `returned-pricing.js`，业务后端应复核，不能每次刷新随机抽取。新结果直接展示服务端返回的预付款；旧结果缺少该字段时兼容计算。人工改价后的预付款放在草稿里，原始 `getResult()` 不变。
+
 ## 输出：人工报价草稿
 
 `getSelection()`、导出 JSON 和 `nautilus:quote-saved` 的内容如下（均为示例）：
@@ -122,7 +140,15 @@ result
   "original_rank": 1,
   "candidate_rank": 1,
   "quote_cny": 138,
-  "machine_quote_cny": 135,
+  "machine_quote_cny": 146.25,
+  "prepayment": {
+    "rule": "quote-prepayment/1",
+    "quoteCny": 138,
+    "amountCny": 50.39,
+    "remainingCny": 87.61,
+    "baseCny": 46,
+    "adjustmentCny": 4.39
+  },
   "description": "操作员确认后的报价说明",
   "image_urls": ["https://example.com/nautilus-demo/a-1.svg"],
   "validation": {"valid": true, "message": "保存仅留在本机。"},

@@ -50,6 +50,17 @@
         check(object(quote?.result) && quote.userProfileId === profile.id, sp + '.quote_pricing', '定价缺失或不属于该用户');
         check(money(quote.result.quoteCny) && money(quote.result.costCny), sp + '.quote_pricing.result', '报价及成本必须为数值或 null');
         check(quote.result.costCny === (cost.selected_route?.total_cost_cny ?? null), sp + '.quote_pricing.result.costCny', '定价成本与排名成本不一致');
+        const deposit=quote.result.prepayment;
+        if(deposit!==undefined && deposit!==null){
+          const cents=n=>typeof n==='number'&&Number.isFinite(n)&&Math.abs(n*100-Math.round(n*100))<1e-6;
+          check(object(deposit) && deposit.rule==='quote-prepayment/1' &&
+            quote.result.quoteCny!==null && deposit.quoteCny===quote.result.quoteCny &&
+            [deposit.amountCny,deposit.remainingCny,deposit.baseCny,deposit.adjustmentCny].every(cents) &&
+            deposit.amountCny>0 && deposit.remainingCny>=0 &&
+            Math.round(deposit.amountCny*100)+Math.round(deposit.remainingCny*100)===Math.round(deposit.quoteCny*100) &&
+            Math.round(deposit.baseCny*100)+Math.round(deposit.adjustmentCny*100)===Math.round(deposit.amountCny*100) &&
+            Math.abs(deposit.adjustmentCny)<=10,sp+'.quote_pricing.result.prepayment','预付金额与总报价不一致');
+        }
         check(typeof quote.summary === 'string' && typeof quote.reason === 'string', sp + '.quote_pricing', '缺少服务器定价理由');
         check(Array.isArray(s.ranking.tags), sp + '.ranking.tags', '缺少服务器校验标签');
       }

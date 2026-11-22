@@ -416,3 +416,6 @@ html.seller-comments-open{overflow:hidden}
 #result-status{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#result-status.error{color:#a54332}
 body>.workspace{height:calc(100dvh - 76px);margin-top:12px;margin-bottom:12px}
 @media(max-width:760px){.integration-toolbar{height:auto;min-height:74px;flex-wrap:wrap;gap:6px 10px;padding:10px}.integration-actions{width:100%;margin-left:0}.integration-actions button,.import-button{font-size:11px;padding:6px 8px}body>.workspace{height:auto;min-height:calc(100dvh - 90px)}}
+
+.quote-prepayment{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fffefa;flex:none}
+.quote-prepayment label{font-size:12px;color:#596e60}.quote-prepayment output{font-size:24px;font-weight:600;color:#284b39;font-variant-numeric:tabular-nums}

@@ -10,11 +10,11 @@ const platforms=[['EBAYUKUS','eBay'],['DSUS','Discogs'],['MERC','Mercari'],['YAH
 const profiles=[],bindings={};
 function makeRelease(id,key,title,artist,total){
  const wishId=`DEMO-WISH-${key}`,profileId=`DEMO-PROFILE-${key}`;
- profiles.push({id:profileId,wishId,targetReleaseId:id,nickname:`示例用户 ${key.toUpperCase()}`,pricing:{},provenance:{source:'synthetic-demo'}});
+ profiles.push({id:profileId,wishId,targetReleaseId:id,nickname:`示例用户 ${key.toUpperCase()}`,pricing:{priceRatio:.3,priceRatioStatus:'valid',pricingMode:'user-priceratio'},provenance:{source:'synthetic-demo'}});
  bindings[id]={profileId,wishId};
  const sources=Array.from({length:total},(_,idx)=>{
   const n=idx+1,[platform_code,platform]=platforms[idx%platforms.length],sid=`${id}:${platform_code}:DEMO-${n}`;
-  const excluded=n===7,unpriced=key==='b'&&n===2,cost=unpriced?null:100+n*12.5,quote=excluded||unpriced?null:Math.round(cost*1.2*100)/100;
+  const excluded=n===7,unpriced=key==='b'&&n===2,cost=unpriced?null:100+n*12.5,quote=excluded||unpriced?null:Math.round(cost*1.3*100)/100;
   const route=cost===null?null:{route_id:'gb-to-cn',warehouse_id:'gb',calculation_complete:true,usable_for_ranking:true,total_cost_cny:cost,components_cny:{sale:cost-25,tax:0,shipping:10},transfer_to_china_cny:15,notes:[]};
   const estimates={cost_rule_version:'demo-only',selected_route:route,routes:route?[route]:[],partial_quotes:unpriced?[{warehouse_id:'us',components_cny:{sale:80,tax:null,shipping:null},transfer_to_china_cny:20,total_cost_cny:null,usable_for_ranking:false,notes:['未提供运费']}]:[]};
   const dims=Object.fromEntries(Array.from({length:29},(_,i)=>[String(i+1).padStart(2,'0'),[]]));
@@ -28,7 +28,7 @@ function makeRelease(id,key,title,artist,total){
    description:{original_description:'Synthetic seller description.'},original_price:{currency:'GBP',sale_type:'fixed_price'},display_tags:[],
    ranking:{rank:n,candidate_rank:excluded?null:n,candidate_id:`${platform_code}:DEMO-${n}`,eligibility:status,identity_tier_label:'演示作品匹配',estimated_cost:estimates,tags,match:{status:'work_match'},reasons:['演示排名，来自结果 JSON'],review_tasks:[]},
    unified_facts:{items:[{obi:n===1?true:n===2?false:null}],issues:[]},dimensions29:dims,semantics_status:excluded?'excluded_by_title':'completed',extraction_findings:[],
-   quote_pricing:{userProfileId:profileId,summary:quote===null?'本条暂无可用报价。':`到仓成本 ¥${cost.toFixed(2)}，服务器建议报价 ¥${quote.toFixed(2)}。`,reason:'这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。',result:{status:quote===null?'unavailable':'provisional',costCny:cost,quoteCny:quote,profitCny:quote===null?null:quote-cost,floorCny:cost===null?null:cost+10,explanationContext:{budgetCny:null,marketCeilingCny:null}}},
+   quote_pricing:{userProfileId:profileId,summary:quote===null?'本条暂无可用报价。':`到仓成本 ¥${cost.toFixed(2)}，服务器建议报价 ¥${quote.toFixed(2)}。`,reason:'这是一份虚构的服务器结果，仅供前端接入演示。人工改价不会改变服务器原结果。',result:{status:quote===null?'unavailable':'provisional',costCny:cost,quoteCny:quote,profitCny:quote===null?null:quote-cost,floorCny:cost===null?null:cost,explanationContext:{budgetCny:null,marketCeilingCny:null}}},
    quote_copy:{status:excluded?'skipped':'completed',description:excluded?'':`${artist}《${title}》，CD，2001 年版本。卖家描述盘面近全新，封套轻微使用痕迹。此内容仅为演示。`,reviewed:false}
   };
  });
@@ -37,4 +37,10 @@ function makeRelease(id,key,title,artist,total){
 }
 const releases=[makeRelease('91000001','a','Harbor Letters','The Example Quartet',7),makeRelease('91000002','b','Evening Tides','Demo Ensemble',2)];
 const result={schema_version:'nautilus-quote-result/1',status:'completed',demo:true,request_sha256:'0'.repeat(64),generated_at:'2026-11-22T06:00:00Z',releases,totals:{releases:2,sources:9},tag_groups:{work:'作品',version:'版本',images:'图片',condition:'品相',cost:'成本'},pricing_context:{userProfiles:profiles,wishBindings:bindings,defaultUserId:profiles[0].id},limitations:['全部为虚构样例，无真实用户、货源、报价或交易。']};
+for(const release of result.releases)for(const source of release.sources){
+ const q=source.quote_pricing,price=q.result.quoteCny;
+ q.result.version='source-user-quote-v3-priceratio';q.result.priceRatio=.3;
+ q.result.prepayment=require('../returned-pricing.js').prepayment(price,{releaseId:null,sourceId:source.ranking.candidate_id,user:{caseId:q.userProfileId}});
+ q.summary=q.reason=price===null?'本条暂无可用报价。':`到仓成本 ¥${q.result.costCny.toFixed(2)} ×（1＋30%）＝¥${price.toFixed(2)}。`;
+}
 fs.writeFileSync(path.join(__dirname,'demo-result.json'),JSON.stringify(result,null,2)+'\n');
